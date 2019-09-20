@@ -34,7 +34,7 @@ Using TfidfVectorizer improves f1-scores for both methods compared with previous
  #### 2. Why you have selected these two classification methods?    
  They are easy to implement, fast, doing reasonably good performance.
  #### 3. Compare selected classification methods. Which one is better? Why?  
- As we see both of them showing similar results, but for Naive Bayes method I found that we need to tune less hyperparameters. Execution time are similar when no GridSearch is using for both algorithms but if doing calculations from scratch for Naive Bayes, then its doing around 15 times faster compared with logistic regression and showing the doing similar perdormance as well.
+ As we see both of them showing similar results, but for Naive Bayes method I found that we need to tune less hyperparameters. Execution  time are similar when no GridSearch is using for both algorithms but if doing calculations from scratch for Naive Bayes, then its doing around 15 times faster compared with logistic regression and showing the doing similar perdormance as well.
  #### 4. How would you compare selected classification methods if the dataset was imbalanced?  
  By checking into confusion matrix, classification report. Basically f-score is good enought metrix to use on unbalanced data for  checking models performance because it is not affected of negative and positive examples rates.
  
