@@ -13,18 +13,18 @@
   * Logistic regression
 * ## Results ![](https://github.com/Antanskas/Sentiment_analysis/blob/master/repository_images/results.png)
   * Naive Bayes: 
-    * Mean test accuracy: 77.58 %
+    * Mean test accuracy: 77.60 %
+    * f1-score for positive class: 0.79
+    * f1-score for negative class: 0.79
+    * execution time with GridSearch: 0.277s
+    * execution time without GridSearch: 0.013s
+    * execution time calculating from scratch: 0.008s
+  * Logistic regression
+    * Mean test accuracy: 74.53 %
     * f1-score for positive class: 0.78
     * f1-score for negative class: 0.78
-    * execution time with GridSearch: 0.259s
-    * execution time without GridSearch: 0.077s
-    * execution time calculating from scratch: 0.0058s
-  * Logistic regression
-    * Mean test accuracy: 74.70 %
-    * f1-score for positive class: 0.77
-    * f1-score for negative class: 0.77
-    * execution time with GridSearch: 2.11s
-    * execution time without GridSearch: 0.075s
+    * execution time with GridSearch: 2.51s
+    * execution time without GridSearch: 0.073s
 * ## Questions ![](https://github.com/Antanskas/Sentiment_analysis/blob/master/repository_images/questions.png)
  #### 1. Describe text processing pipeline you have selected.  
 1) Because models do not work with plain text I needed to convert it to numerical representation. For that I needed to have units - tokens later to be encoded. In a first attempt i decided to use keras tokenizer but then came to conclusion that with keras tokenizer I am loosing information about every word frequency in a sentence (one hot encoding only unique words) and do not have information about how common or unique each word is in whole dataset.  
@@ -34,7 +34,7 @@ Using TfidfVectorizer improves f1-scores for both methods compared with previous
  #### 2. Why you have selected these two classification methods?    
  They are easy to implement, fast, doing reasonably good performance.
  #### 3. Compare selected classification methods. Which one is better? Why?  
- As we see both of them showing similar results, but for Naive Bayes method I found that we need to tune less hyperparameters. Execution  time are similar when no GridSearch is using for both algorithms but if doing calculations from scratch for Naive Bayes, then its doing around 15 times faster compared with logistic regression and showing the doing similar perdormance as well.
+ As we see both of them showing similar results (the same f1-score), but for Naive Bayes method I found that we need to tune less hyperparameters. Overall it seems that both algorithms performing within more or less the same time but if looking closer an execution time is a bit less for Naive Bayes and even more fast if doing calculations from scratch (no hyperparameters used)
  #### 4. How would you compare selected classification methods if the dataset was imbalanced?  
  By checking into confusion matrix, classification report. Basically f-score is good enought metrix to use on unbalanced data for  checking models performance because it is not affected of negative and positive examples rates.
  
